@@ -1,11 +1,5 @@
 # ProjectVersionFromGit
-Plugin for UE4/5 project.  
-Set version for project from git tag format MAJOR.MINOR.PATCH also set branch name, commit hash and datetime build.
-
-# Install
-https://www.unrealengine.com/marketplace/en-US/product/projectversionfromgit  
-or manual unzip ProjectVersionFromGit-X.X.X-build-win64-ueX.XX.X.zip from
-https://github.com/mrbindraw/ProjectVersionFromGit/releases into ROOT_UE4\Engine\Plugins.
+This plugin set version for project from git tag format MAJOR.MINOR.PATCH also set branch name, commit hash and utc-datetime build.
 
 **C++/Blueprints functions:**
 - GetProjectVersion()
@@ -17,6 +11,28 @@ https://github.com/mrbindraw/ProjectVersionFromGit/releases into ROOT_UE4\Engine
 - GetProjectVersionDateTimeBuild()
 - GetProjectVersionFormatAll()
 
-**Supported engines:**
-- 4.18 - 5.0
+# Install into Project
+You can install manually by extracting archive `ProjectVersionFromGit-X.X.X-UE-X.X.zip` from
+[Releases](https://github.com/mrbindraw/ProjectVersionFromGit/releases) to your project plugins folder  
+or build example project `ExamplePrj-UE-X.X-ProjectVersionFromGit-X.X.X.zip`.  
 
+# Install into Unreal Engine  
+You can install it from the marketplace [ProjectVersionFromGit](https://www.fab.com/listings/044c4f9a-eedc-487b-a973-c1c940470373)
+
+Manual:   
+1. Download and extracting archive `ProjectVersionFromGit-X.X.X-UE-X.X.zip` from [Releases](https://github.com/mrbindraw/ProjectVersionFromGit/releases) to any disk path, for example: `D:\Plugins`  
+2. Than open any terminal (cmd, powershell) in `D:\Plugins` folder  
+3. Launch `RunUAT` in the terminal with arguments, for example:
+
+Windows:
+```  
+D:\EpicGames\UE_5.4\Engine\Build\BatchFiles\RunUAT.bat BuildPlugin -Plugin=D:\Plugins\ProjectVersionFromGit\ProjectVersionFromGit.uplugin -Package=D:\Plugins\UE_5.4\ProjectVersionFromGit -Rocket
+```
+Mac:
+```
+sh "/Users/Shared/Epic Games/UE_5.4/Engine/Build/BatchFiles/RunUAT.sh" BuildPlugin -Plugin="$PWD/ProjectVersionFromGit/ProjectVersionFromGit.uplugin" -Package="$PWD/5.4/ProjectVersionFromGit" -Rocket
+```
+4. If you see the message `BUILD SUCCESSFUL` in the terminal after the build is complete,  
+copy the `ProjectVersionFromGit` folder from `D:\Plugins\UE_5.4` to `D:\EpicGames\UE_5.4\Engine\Plugins\Marketplace`  
+> [!IMPORTANT]
+> **The engine path and folder names may differ on your system.**
